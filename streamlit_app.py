@@ -49,7 +49,7 @@ input_row = df_penguins[:1]
 # Encode y
 target_mapper = {'Adelie': 0,'Chinstrap': 1,'Gentoo': 2}
 target_encode = lambda x : target_mapper[x]
-target_encode('Gentoo')
+st.write(target_encode('Gentoo'))
 
 with st.expander('Input features'):
   st.write('**Input penguin data**')
