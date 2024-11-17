@@ -39,17 +39,22 @@ with st.sidebar:
           'body_mass_g':body_mass_g
           }
   input_df= pd.DataFrame(data,index=[0])
-input_penguins = pd.concat([input_df,X],axis=0)
+
+ input_penguins = pd.concat([input_df,X],axis=0)
+encode = ['island','sex']
+df_penguins = pd.get_dummies(input_penguins,prefix=encode)
+input_row = df_penguins[:1]
 
 with st.expander('Input features'):
   st.write('**Input penguin data**')
   input_df
   st.write('**Combined penguin data**')
   input_penguins
+  st.write('Encoded Input Penguin')
+  input_row
 
-encode = ['island','sex']
-df_penguins = pd.get_dummies(input_penguins,prefix=encode)
-df_penguins
+
+
 
   
 
