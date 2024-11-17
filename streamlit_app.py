@@ -57,6 +57,7 @@ X=df_penguins[1:]
 
 # Encode y_raw
 target_mapper = {'Adelie': 0,'Chinstrap': 1,'Gentoo': 2}
+rev_target_mapper = {v:k for k,v in target_mapper.items()}
 target_encode = lambda x : target_mapper[x]
 y=y_raw.apply(target_encode)
 
@@ -74,7 +75,7 @@ clf.fit(X,y)
 # Prediction
 prediction = clf.predict(input_row)
 prediction_proba = clf.predict_proba(input_row)
-prediction_proba
+st.write(type(prediction_proba))
 prediction
 
 
