@@ -75,8 +75,10 @@ clf.fit(X,y)
 # Prediction
 prediction = clf.predict(input_row)
 prediction_proba = clf.predict_proba(input_row)
-st.write(type(prediction_proba))
-prediction
+ 
+df_prediction_proba = pd.DataFrame(prediction_proba,columns=['pred'])
+df_prediction_proba['target_raw'] = df_prediction_proba['pred'].apply(target_encode)
+df_prediction_proba
 
 
 
