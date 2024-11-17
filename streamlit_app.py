@@ -84,9 +84,8 @@ df_prediction_proba = df_prediction_proba.rename(columns={0: 'Adelie',
                                  2: 'Gentoo'})
 st.subheader('Predicted Species')
 penguin_species = np.array(['Adelie', 'Chinstrap', 'Gentoo'])
-disp = str(penguin_species[prediction])
-st.subheader(disp[0])
-
+disp = penguin_species[prediction]
+st.write(disp)
 
 
 
