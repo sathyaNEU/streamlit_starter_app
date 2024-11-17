@@ -72,10 +72,10 @@ clf = RandomForestClassifier()
 clf.fit(X,y)
 
 # Prediction
-prediction = clf.predict(input_row)
+prediction_proba = clf.predict(input_row)
 prediction_proba = clf.predict_proba(input_row)
-preduction_proba
-preduction
+prediction_proba
+prediction_proba
 
 
 
