@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
 
 st.title('😁 zBOT96 on Action!')
 
@@ -52,6 +53,7 @@ with st.expander('Input features'):
 encode = ['island','sex']
 df_penguins = pd.get_dummies(input_penguins,prefix=encode)
 input_row = df_penguins[:1]
+X=df_penguins[1:]
 
 # Encode y_raw
 target_mapper = {'Adelie': 0,'Chinstrap': 1,'Gentoo': 2}
@@ -63,6 +65,17 @@ with st.expander('Data preparation'):
   input_row
   st.write('**Encoded y**')
   y
+
+# Model training and inference
+## Training the model
+clf = RandomForestClassifier()
+clf.fit(X,y)
+
+# Prediction
+prediction = clf.predict(input_row)
+prediction_proba = clf.predict_proba(input_row)
+preduction_proba
+preduction
 
 
 
