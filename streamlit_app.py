@@ -40,17 +40,23 @@ with st.sidebar:
           }
   input_df= pd.DataFrame(data,index=[0])
 
+# Encode X
 input_penguins = pd.concat([input_df,X],axis=0)
 encode = ['island','sex']
 df_penguins = pd.get_dummies(input_penguins,prefix=encode)
 input_row = df_penguins[:1]
+
+# Encode y
+target_mapper = {'Adelie': 0,'Chinstrap': 1,'Gentoo': 2}
+target_encode = lambda x : target[x]
+target_encode('Gentoo')
 
 with st.expander('Input features'):
   st.write('**Input penguin data**')
   input_df
   st.write('**Combined penguin data**')
   input_penguins
-  st.write('Encoded Input Penguin')
+  st.write('**Encoded Input Penguin**')
   input_row
 
 
