@@ -58,7 +58,7 @@ target_mapper = {'Adelie': 0,'Chinstrap': 1,'Gentoo': 2}
 target_encode = lambda x : target_mapper[x]
 y=y_raw.apply(target_encode)
 
-with st.expander('Data preparation')
+with st.expander('Data preparation'):
   st.write('**Encoded Input Penguin (X)**')
   input_row
   st.write('**Encoded y**')
