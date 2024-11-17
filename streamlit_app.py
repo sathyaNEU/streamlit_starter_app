@@ -76,7 +76,7 @@ clf.fit(X,y)
 prediction = clf.predict(input_row)
 prediction_proba = clf.predict_proba(input_row)
  
-df_prediction_proba = pd.DataFrame(prediction_proba,columns=['pred'])
+df_prediction_proba = pd.DataFrame(prediction_proba)
 df_prediction_proba.rename(columns=rev_taget_mapper)
 df_prediction_proba
 
