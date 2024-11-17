@@ -32,7 +32,7 @@ with st.sidebar:
   body_mass_g = st.slider('Body mass (g)',2700.00,6300.00,4207.00)
 
   data = {'island':island,
-          'gender':gender,
+          'sex':gender,
           'bill_length_mm':bill_length_mm,
           'bill_depth_mm':bill_depth_mm,
           'flipper_length_mm':flipper_length_mm,
