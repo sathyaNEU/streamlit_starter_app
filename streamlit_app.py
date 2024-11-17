@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 
 st.title('😁 zBOT96 on Action!')
@@ -81,7 +82,7 @@ df_prediction_proba = df_prediction_proba.rename(columns={0: 'Adelie',
                                  1: 'Chinstrap',
                                  2: 'Gentoo'})
 st.subheader('Predicted Species')
-penguin_species = np.array(target_mapper.keys())
+penguin_species = np.array(list(target_mapper.keys()))
 st.success(penguin_species[prediction]) 
 
 
