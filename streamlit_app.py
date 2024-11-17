@@ -2,4 +2,4 @@ import streamlit as st
 
 st.title('🎈 App Name')
 
-st.write('Hello world!')
+st.info('My First Streamlit App, so far so good...')
