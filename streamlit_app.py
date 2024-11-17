@@ -77,7 +77,7 @@ prediction = clf.predict(input_row)
 prediction_proba = clf.predict_proba(input_row)
  
 df_prediction_proba = pd.DataFrame(prediction_proba)
-df_prediction_proba.columns=rev_target_mapper.values().to_list()
+df_prediction_proba.columns=target_mapper.values()
 # df_prediction_proba.rename(columns=rev_target_mapper)
 df_prediction_proba
 
